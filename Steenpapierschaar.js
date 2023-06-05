@@ -16,9 +16,8 @@ humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze"
 const computerOutput = document.querySelector("#computer");
 const resultOutput = document.querySelector("#result")
 
-steenBtn.addEventListener("click", function (event) {
-  humanChoice = event.target.id;
-  humanOutput.innerHTML = humanChoice;
+
+function computerChoiceF() {
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   if (randomNumber === 1) {
     computerChoice = 'steen';
@@ -30,6 +29,20 @@ steenBtn.addEventListener("click", function (event) {
     computerChoice = 'papier';
   }
   computerOutput.innerHTML = computerChoice
+}
+
+function resultChoiceF(humanChoice) {
+  console.log(humanChoice)
+
+}
+
+
+
+steenBtn.addEventListener("click", function (event) {
+  humanChoice = event.target.id;
+  humanOutput.innerHTML = humanChoice;
+  computerChoiceF();
+  resultChoiceF('steen');
   if (computerChoice === 'steen' && humanChoice === 'steen') {
     resultChoice = "gelijk";
   }
@@ -46,18 +59,7 @@ steenBtn.addEventListener("click", function (event) {
 papierBtn.addEventListener("click", function (event) {
   humanChoice = event.target.id;
   humanOutput.innerHTML = humanChoice;
-  const randomNumber = Math.floor(Math.random() * 3) + 1;
-  if (randomNumber === 1) {
-    computerChoice = 'steen';
-  }
-  if (randomNumber === 2) {
-    computerChoice = 'schaar';
-  }
-  if (randomNumber === 3) {
-    computerChoice = 'papier';
-  }
-  computerOutput.innerHTML = computerChoice
-
+  computerChoiceF();
   if (computerChoice === 'papier' && humanChoice === 'papier') {
     resultChoice = "gelijk";
   }
@@ -75,18 +77,7 @@ papierBtn.addEventListener("click", function (event) {
 schaarBtn.addEventListener("click", function (event) {
   humanChoice = event.target.id;
   humanOutput.innerHTML = humanChoice;
-  const randomNumber = Math.floor(Math.random() * 3) + 1;
-  if (randomNumber === 1) {
-    computerChoice = 'steen';
-  }
-  if (randomNumber === 2) {
-    computerChoice = 'schaar';
-  }
-  if (randomNumber === 3) {
-    computerChoice = 'papier';
-  }
-  computerOutput.innerHTML = computerChoice
-
+  computerChoiceF();
   if (computerChoice === 'steen' && humanChoice === 'schaar') {
     resultChoice = "computer wint";
   }
