@@ -8,9 +8,6 @@ const papierBtn = document.querySelector("#papier");
 const schaarBtn = document.querySelector("#schaar");
 
 
-// button click event
-const btns = document.querySelectorAll('button');
-
 humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze";
 
 const computerOutput = document.querySelector("#computer");
@@ -37,6 +34,7 @@ function resultChoiceF(humanChoice) {
 }
 
 steenBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   humanChoice = event.target.id;
   humanOutput.innerHTML = humanChoice;
   computerChoiceF();
@@ -56,6 +54,7 @@ steenBtn.addEventListener("click", function (event) {
 });
 
 papierBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   humanChoice = event.target.id;
   humanOutput.innerHTML = humanChoice;
   computerChoiceF();
@@ -74,6 +73,7 @@ papierBtn.addEventListener("click", function (event) {
 });
 
 schaarBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   humanChoice = event.target.id;
   humanOutput.innerHTML = humanChoice;
   computerChoiceF();
@@ -91,4 +91,28 @@ schaarBtn.addEventListener("click", function (event) {
   resultOutput.innerHTML = resultChoice;
 });
 
+// Function to update the high score
+function updateHighScore() {
+  const currentScore = 100; // Replace with your actual score value
+  
+  // Retrieve the previous high score from local storage
+  const previousHighScore = localStorage.getItem("highScore");
+
+  if (previousHighScore === null || currentScore > previousHighScore) {
+    // If no previous high score or current score is higher, update the high score
+    localStorage.setItem("highScore", currentScore);
+    document.getElementById("highScore").textContent = currentScore;
+    alert("Congratulations! New high score achieved!");
+  } else {
+    alert("Your score is not higher than the current high score.");
+  }
+}
+
+// On page load, retrieve and display the high score from local storage
+window.addEventListener("DOMContentLoaded", () => {
+  const previousHighScore = localStorage.getItem("highScore");
+  if (previousHighScore !== null) {
+    document.getElementById("highScore").textContent = previousHighScore;
+  }
+});
 

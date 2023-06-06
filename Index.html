@@ -6,10 +6,19 @@
     </head>
     <body>
 
-        <h1>Steen papier schaar</h1>
+    <div class="row">
+        <div class="column">
+            <button type="button" onclick="updateHighScore()">Update High Score</button>
+        </div>
+        <div class="column"> 
+            <h1>Steen papier schaar</h1>
+        </div>  
+    </div> 
+        <h2>High Score: <span id="highScore"></span></h2>    
         <h2>Computer: <span id="computer"></span></h2>
         <h2>Jouw keuze: <span id="human"></span></h2>
         <h2>Uitkomst: <span id="result"></span></h2>
+
 
     <a href="#" onclick="handleButtonClick()">
         <img src="steen.jpg" alt="Button Image" id="steen">
