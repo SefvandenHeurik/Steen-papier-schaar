@@ -90,3 +90,5 @@ schaarBtn.addEventListener("click", function (event) {
   }
   resultOutput.innerHTML = resultChoice;
 });
+
+
