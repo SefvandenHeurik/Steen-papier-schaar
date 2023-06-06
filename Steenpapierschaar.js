@@ -7,11 +7,9 @@ const steenBtn = document.querySelector("#steen");
 const papierBtn = document.querySelector("#papier");
 const schaarBtn = document.querySelector("#schaar");
 
-const btns = document.querySelectorAll('button');
 
-let humanChoice = "";
-let computerChoice = "";
-let resultChoice = "";
+// button click event
+const btns = document.querySelectorAll('button');
 
 humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuze";
 
