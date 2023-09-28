@@ -104,7 +104,7 @@ function updateHighScore() {
     document.getElementById("highScore").textContent = currentScore;
     alert("Congratulations! New high score achieved!");
   } else {
-    alert("Your score is not higher than the current high score.");
+
   }
 }
 

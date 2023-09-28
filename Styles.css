@@ -9,7 +9,7 @@ h1 {
     color: rgb(179, 209, 255);
     text-shadow: 2px 0 #0000ff, -2px 0 #0000ff, 0 2px #0000ff, 0 -2px #0000ff,
              1px 1px #0000ff, -1px -1px #0000ff, 1px -1px #0000ff, -1px 1px #0000ff;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 h2 {
